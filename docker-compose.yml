@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    # Instead of "build: ./backend", we pull from the cloud
+    image: docker push usamadevs/mentexa-backend:v1
+    container_name: mentexa-backend
+    ports:
+      - "8000:8000"
+    restart: always
+    environment:
+      # Tell your friend to put THEIR Groq Key here, or paste yours if you want to share it
+      - GOOGLE_API_KEY=AIzaSyATZg-7kIlKNJwL10mZMiUompw-vDg8Sxw
+
+  frontend:
+    image: docker push usamadevs/mentexa-frontend:v1
+    container_name: mentexa-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend

@@ -1,0 +1,40 @@
+# 1. Virtual Environment (CRITICAL: Do not copy this!)
+venv/
+.venv/
+env/
+
+# 2. Python Cache & Logs
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# 3. Environment Secrets (Keep these local only!)
+.env
+.env.local
+
+# 4. Git Folder
+.git/
+.gitignore
+
+# 5. Temporary Audio/Video Files (Don't bloat the image)
+*.wav
+*.mp3
+*.webm
+*.mp4
+temp_emo.webm
+clean_input.wav
+raw_input.webm
+temp/
+tmp/
+
+# 6. DeepFace/Model Weights (If you download them at runtime, ignore them here)
+# If your 'models' folder is truly empty or just for runtime, ignore it.
+# If you need to COPY pretrained models, comment out the next line.
+.deepface/
+weights/
+
+# 7. OS Junk
+.DS_Store
+Thumbs.db
